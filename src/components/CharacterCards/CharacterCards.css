@@ -1,0 +1,12 @@
+.characterCards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    height: calc(100vh - 140px);
+    flex-wrap: wrap;
+    justify-items: start;
+    align-content: space-around;
+    overflow-y: auto;
+    margin-top: 30px;
+  }

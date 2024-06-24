@@ -1,0 +1,74 @@
+
+.AdminPanel{
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    bottom: -70px;
+    left: 0px;
+    background: rgb(160,160,160);
+    backdrop-filter: blur(19px) saturate(180%);
+    z-index: 100;
+    transition: .4s all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        padding: 5px;
+    }
+
+    .AdminPanelSection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap:3px 
+    }
+
+    .sysBtn{
+        outline: none;
+        cursor: pointer;
+        background: transparent;
+        border: 1px solid black;
+        padding: 5px 10px;
+        color: black;
+        border-radius: 15px;
+        transition: .4s all;
+    }
+
+    .sysBtn:hover{
+        background: #2f2f2f;
+        border: 1px solid #2f2f2f;
+        color: white;
+    }
+    
+}
+
+.open{
+    bottom: 0px;
+}
+
+
+.ufertyros{
+    background: rgb(160,160,160);
+    position: absolute;
+    bottom: 70px;
+    left: 0;
+    width: 100px;
+    height: 20px;
+    z-index: 110;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 12px;
+    
+    img{
+        user-select: none;
+    }
+}
+
+
