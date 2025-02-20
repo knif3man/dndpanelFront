@@ -909,3 +909,93 @@ form label{
       cursor:pointer;
     }
   }
+
+
+  
+
+@media (max-width: 750px) {
+  .exhaustion{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 330px;
+      gap: 15px;
+  }
+
+  .charsheet_wrapper{
+    width: 330px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  form.charsheet{
+    width: 330px;
+  }
+
+  form.charsheet main > section{
+    width: 100%;
+  }
+
+  main{
+    width: 95%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  form.charsheet header section.misc{
+    border: none;
+    width: 100%;
+
+    ul{
+      width: 100%;
+
+      li{
+        width: 100%;
+        margin-bottom: 10px;
+        gap: 3px;
+        text-align: left;
+
+        input{
+          text-align: center;
+        }
+
+        label{
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  form.charsheet header section.charname{
+    border: none;
+    width: 100%;
+
+    input{
+      text-align: center;
+      border: 1px solid black;
+    }
+    label{
+      font-size: 10px;
+    }
+  }
+
+
+  textarea[name='features'], textarea[name='Equipment']{
+    max-height: 500px;
+    min-height: 300px;
+  }
+
+  textarea[name='ATTACKS&SPELLCASTING'], textarea[name='otherprofs']{
+    max-height: 500px;
+    min-height: 300px;
+  }
+  
+  
+}

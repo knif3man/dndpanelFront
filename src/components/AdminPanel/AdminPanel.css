@@ -110,3 +110,109 @@
     transform: translateY(-50%);
 }
 
+@media (max-width: 720px) {
+
+    .loginDiv{
+        max-width: 330px;
+        min-height: 330px;
+
+    }
+
+
+    .ufertyros{
+        bottom: 399px;
+    }
+    .AdminPanel{
+        height: 400px;
+        bottom: -400px;
+        transition: .6s;
+    }
+    .open{
+        bottom: 0;
+    }
+    .AdminPanel form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .AdminPanelStatusEffect{
+            gap: 10px;
+
+            .selectWrapper{
+                gap: 23px;
+            }
+        }
+    }
+    .left{
+        top: 100%;
+        transform: translateY(-120%);
+    }
+
+    .charsheet_wrapper{
+        width: 100%;
+    }
+    .username{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        flex-direction: column;
+        position: absolute;
+        left: 5px;
+        
+        label, span{
+            font-size: 10px;
+        }
+    }
+
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border: transparent;
+
+        .charname{
+            border: none;
+        }
+        
+        .misc {
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            ul{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                width: 90%;
+                border: none;
+
+            }
+
+        }
+        
+    }
+
+    form.charsheet header section.charname{
+        border: none;
+    }
+    
+    .charsheet{
+        width: 90%;
+    }
+
+    main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        flex-direction: column;
+        width: 100%;
+    }
+}
