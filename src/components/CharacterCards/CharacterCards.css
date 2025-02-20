@@ -1,0 +1,78 @@
+.characterCards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-items: start;
+    align-content: space-around;
+    padding:20px;
+    min-height: calc(100% - 70px);
+    transition: .4s;
+  }
+
+.hiderDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  width: 150px;
+  height: 200px;
+
+  select{
+    padding: 10px 10px;
+    background: #80808090;
+    box-shadow: -3px 3px 3px #00000070;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+  }
+
+  .sysBtn{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    color: black;
+    border-radius: 15px;
+    transition: .4s all;
+    box-shadow: inset 3px 3px 3px #00000070;
+    background: #80808090;
+    backdrop-filter: blur(19px) saturate(180%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+  }
+
+  .sysBtn:hover{
+      background: #2f2f2f;
+      color: white;
+  }
+}
+
+.hidedCharacters{
+  padding: 15px 15px;
+  border-radius: 10px;
+  font-size: 20px;
+  background: rgba(128, 128, 128, 0.44);
+  box-shadow: -3px 3px 3px #00000070;
+  color: white;
+  backdrop-filter: blur(5px) saturate(110%);
+  cursor: pointer;
+  transition: .8s all;
+  text-shadow: 1px 1px 1px black;
+  user-select: none;
+  transition: .4s;
+}
+
+.hideSelect{
+  display: none;
+}
+.showSelect{
+  display: block;
+}

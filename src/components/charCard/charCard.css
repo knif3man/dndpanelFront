@@ -1,0 +1,103 @@
+@font-face {
+    font-family: "FantaisieArtistique";
+    src: local("FantaisieArtistique"),
+     url("./../../fonts/fantaisieartistique/FantaisieArtistique.ttf") format("truetype");
+   }
+
+
+.character_card{
+    background: #80808090;
+    box-shadow: -3px 3px 3px #00000070;
+    border-radius: 12px;
+    width:300px;
+    height:300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:20px;
+    z-index: 1;
+    transition: 0.8s ease;
+    backdrop-filter: blur(5px) saturate(110%);
+    color: #504f4ffa;
+    cursor: pointer;
+    transition: .8s all;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+.char_name{
+    font-size: 36px;
+    user-select: none;
+}
+
+.stats{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 24px;
+    user-select: none;
+}
+
+.bars{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 20px;
+    user-select: none;
+    margin-top: 15px;
+}
+
+.progress-back{
+    height: 20px;
+    width: 200px;
+    border: 1px solid #00000030;
+    border-radius: 12px;
+    user-select: none;
+}
+
+.progress-bar{
+    border-radius: 12px;
+    height: 18px;
+    transition: .6s all;
+    user-select: none;
+}
+
+.progress-value{
+    display: block;
+    width:200px;
+    text-align: center;
+    user-select: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: black;
+    text-shadow: 0px 0px 4px white;
+}
+
+.hp{
+    background: #ff000097;
+}
+.exp{
+    background: #e5ff00a9;
+}
+
+.statusEffects{
+    width: 200px;
+    height: 34px;
+}
+
+.statusIMG{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    overflow: hidden;
+    gap: 3px;
+
+    img{
+        -webkit-filter: drop-shadow( -3px 3px 3px #00000070);
+        filter: drop-shadow( -3px 3px 3px #00000070);
+    }
+}

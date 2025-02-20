@@ -1,0 +1,184 @@
+
+
+.blackscreen{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    background: #7A767C99;
+}
+
+.wrapper{
+    width: 70%;
+    height: 70%;
+    /* background: #E2E7D7; */
+    background: #f8f8e699;
+    backdrop-filter: blur(19px) saturate(180%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform: translateY(-2%);
+    box-shadow: -15px -5px 15px #00000070;
+    border: 1px solid rgba(160,160,160);
+}
+
+.choose{
+    width: 90%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 30px;
+    color: black;
+
+    .controlsAdding{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap:30px;
+    }
+
+    .toSelect{
+        width: 45%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        gap: 5px;
+        /* border: 1px solid black; */
+        padding: 20px 20px;
+        overflow-y: auto;
+        background: #FCFCF175;
+        box-shadow: inset 3px 3px 3px #00000070;
+        backdrop-filter: blur(19px) saturate(180%);
+        
+        h3{
+            margin-bottom: 20px;
+            user-select: none;
+        }
+
+        .forChars{
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            gap: 15px;
+            text-align: center;
+            flex-direction: column;
+            width: 90%;
+            background: #f8f8e699;  
+            
+            .charToSelect{
+                padding: 10px 10px;
+                /* border: 1px solid black; */
+                box-shadow: inset 0px 0px 3px #00000070;
+                width: 100%;
+                user-select: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+                text-align: center;
+                transition: .4s all;              
+                backdrop-filter: blur(19px) saturate(180%);
+
+                .initiative{
+                    width: 100px;
+                    box-shadow: inset 0px 0px 3px #00000070;
+                    backdrop-filter: blur(19px) saturate(180%);
+                    text-align: center;
+                    border: none;
+                    background: #f8f8e699; 
+                }
+
+                .okbtn{
+                    border: none;
+                    backdrop-filter: blur(19px) saturate(180%);
+                    padding: 5px 10px;
+                    background: #FCFCF1;
+                    border-radius: 4px;
+                    box-shadow: inset 3px 3px 3px #00000070;
+                    cursor: pointer;
+                }
+
+                .okbtn:hover{
+                    box-shadow:  0px 0px 3px white;
+                }
+            }
+
+            .charToSelect:hover{
+                background: #2f2f2f;
+                /* border: 1px solid #2f2f2f; */
+                color: white;
+            }
+        }
+    }
+
+    #addnpc{
+        margin-top: 30px;
+        padding: 5px 5px;
+        width: 150px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: inset 3px 3px 3px #00000070;
+        background: #FCFCF1;
+        border:none;
+    }
+
+    #addnpc:hover{
+        background: #2f2f2f;
+        color: white;
+    }
+
+    .selected{
+        width: 45%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        padding: 20px 20px;
+        border: 1px solid black;
+    }
+}
+
+.controlsBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 15px;
+    transition: .4s all;
+}
+
+.endBtn{
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    color: black;
+    border-radius: 15px;
+    transition: .4s all;
+    box-shadow: inset 3px 3px 3px #00000070;
+    background: #FCFCF190;
+    backdrop-filter: blur(19px) saturate(180%);
+
+}
+
+.endBtn:hover{
+    background: #2f2f2f99;
+    color: white;
+    backdrop-filter: blur(19px) saturate(180%);
+}
