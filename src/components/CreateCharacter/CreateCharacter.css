@@ -1,0 +1,133 @@
+.blackscreen{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    background: #7A767C99;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgba(0,0,0,0.7);
+}
+
+.wrapper{
+    width: 70%;
+    height: 70%;
+    /* background: #E2E7D7; */
+    background: #f8f8e699;
+    backdrop-filter: blur(19px) saturate(180%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform: translateY(-2%);
+    box-shadow: -15px -5px 15px #00000070;
+    border: 1px solid rgba(160,160,160);
+
+    h2{
+        margin-bottom: 10px;
+    }
+}
+
+
+.error{
+    color:red
+}
+
+
+
+
+
+.addForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 30px;
+    min-width: 70%;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgba(0,0,0,0.7);
+    overflow-y: auto;
+    background: #FCFCF175;
+    box-shadow: inset 3px 3px 3px #00000070;
+    backdrop-filter: blur(19px) saturate(180%);
+    border-radius: 14px;
+    margin-top: 30px;
+
+    
+
+    .row{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        label{
+            text-align: center;
+            min-width: 40%;
+        }
+
+        .error_input{
+            box-shadow: 0 0 5px red inset;
+        }
+
+        .rowInput{
+            background: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            color: black;
+            border-radius: 15px;
+            transition: .4s all;
+            background: #FCFCF190;
+            backdrop-filter: blur(19px) saturate(180%);
+            min-width: 60%;
+        }
+    }
+    
+
+    .endBtn{
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 10px 20px;
+        color: black;
+        border-radius: 15px;
+        transition: .4s all;
+        box-shadow: inset 3px 3px 3px #00000070;
+        background: #FCFCF190;
+        backdrop-filter: blur(19px) saturate(180%);
+    }
+
+    .endBtn:hover{
+        background: #2f2f2f99;
+        color: white;
+        backdrop-filter: blur(19px) saturate(180%);
+    }
+}
+
+
+@media screen and (max-width: 500px){
+   
+    .wrapper{
+        width: auto;
+    }
+
+    .addForm{
+        .row{
+            flex-direction: column;
+
+            .rowInput{
+                width: auto;
+            }
+        }
+    }
+    
+}

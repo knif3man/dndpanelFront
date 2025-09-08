@@ -1,0 +1,265 @@
+
+.AdminPanel{
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    bottom: -70px;
+    left: 0px;
+    background: rgb(160,160,160);
+    backdrop-filter: blur(19px) saturate(180%);
+    z-index: 100;
+    transition: .4s all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        padding: 5px;
+    }
+
+    .AdminPanelSection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap:3px 
+    }
+
+    .sysBtn{
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 10px 20px;
+        color: black;
+        border-radius: 15px;
+        transition: .4s all;
+        box-shadow: inset 3px 3px 3px #00000070;
+        background: #FCFCF190;
+        backdrop-filter: blur(19px) saturate(180%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sysBtn:hover{
+        background: #2f2f2f;
+        color: white;
+    }
+    
+}
+
+.open{
+    bottom: 0px;
+}
+
+
+.ufertyros{
+    background: rgb(160,160,160);
+    position: absolute;
+    bottom: 70px;
+    left: 0;
+    width: 100px;
+    height: 20px;
+    z-index: 110;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 12px;
+    transition: .6s;
+    
+    img{
+        user-select: none;
+    }
+}
+
+.selectWrapper{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+
+    label{
+        width:70px;
+        color: #000000B3;
+    }
+
+    select{
+        color: #000000B3;
+    }
+}
+
+
+.statusEffect{
+    background: #f8f8e690;
+    padding: 3px 5px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: none;
+    outline: none;
+    min-width: 200px;
+}
+
+.left{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 720px) {
+
+    .loginDiv{
+        max-width: 330px;
+        min-height: 330px;
+
+    }
+
+
+    .ufertyros{
+        bottom: 399px;
+    }
+    .AdminPanel{
+        height: 400px;
+        bottom: -400px;
+        transition: .6s;
+    }
+    .open{
+        bottom: 0;
+    }
+    .AdminPanel form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .AdminPanelStatusEffect{
+            gap: 10px;
+
+            .selectWrapper{
+                gap: 23px;
+            }
+        }
+    }
+    .left{
+        top: 100%;
+        transform: translateY(-120%);
+    }
+
+    .charsheet_wrapper{
+        width: 100%;
+    }
+    .username{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        flex-direction: column;
+        position: absolute;
+        left: 5px;
+        
+        label, span{
+            font-size: 10px;
+        }
+    }
+
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border: transparent;
+
+        .charname{
+            border: none;
+        }
+        
+        .misc {
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            ul{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                width: 90%;
+                border: none;
+
+            }
+
+        }
+        
+    }
+
+    form.charsheet header section.charname{
+        border: none;
+    }
+    
+    .charsheet{
+        width: 90%;
+    }
+
+    main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+@media (min-width: 721px) and (max-width: 1000px) {
+    .AdminPanel {
+        font-size: 16px;
+        height: 160px;
+        bottom: -160px;
+    }
+
+    .open{
+        bottom: 0;
+    }
+
+    .hideCharacters{
+        position: absolute;
+        bottom: 25px;
+        right: 0;
+
+        .sysBtn{
+            padding: 20px;
+        } 
+
+    }
+
+    .left{
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        z-index: 9999;
+    }
+
+    .form{
+        width: 100%;
+    }
+
+    .AdminPanelSection input{
+        width: 100px;
+    }
+
+    .hideCharacters span{
+        
+    }
+
+    .ufertyros{
+        bottom: 159px;
+    }
+}

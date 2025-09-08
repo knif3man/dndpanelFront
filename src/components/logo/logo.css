@@ -1,0 +1,10 @@
+.logo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -3;
+    opacity: 0.085;
+    pointer-events: none;
+    margin-top: 30px;
+  }

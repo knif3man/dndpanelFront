@@ -1,0 +1,1001 @@
+
+.charsheet{
+    width: 90%;
+    height: 100%;
+    background: linear-gradient(to bottom right, rgba(160, 160, 160, 0.3), rgba(160, 160, 160, 0.5));;
+    box-shadow: 0px 0px 3px #2f2f2f90;
+    backdrop-filter: blur(13px);
+    padding: 10px 20px;
+    border-radius: 12px;
+    color: black;
+}
+
+form label{
+  color: black;
+}
+  
+  .header{
+    min-height: 70px;
+    min-width: 100%;
+    position: static;
+    top:0;
+    left: 0;
+    margin:0;
+    background: #c2c2c2;
+    box-shadow: 1px 1px 13px #c2c2c2;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header__wrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .DoNotTouch{
+    position: absolute;
+    right: 10px;
+  }
+
+  .DoNotTouch:hover{
+    cursor: pointer;
+  }
+
+  .charsheetbck{
+    background: #2f2f2f90;
+    backdrop-filter: blur(9px);
+    border-radius: 25px;
+    box-shadow: -1px 3px 15px black;
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: 0.8s ease;
+    position: absolute;
+    width: 850px;
+    left: 50%;
+    height: 1140px;
+    z-index: -1;
+    transform: translateX(-50%);
+    margin-top: 40px;
+  }
+
+
+
+  body{
+    background: #f8f8e6;
+    margin: 0;
+    padding: 0;
+    overflow:visible;
+  }
+
+  input:not(.DoNotTouch){
+    background: #f8f8e690;
+    padding: 3px 5px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: none;
+    outline: none;
+  }
+
+  textarea{
+    background: #f8f8e6;
+    opacity:0.7;
+    outline: none;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  div:not(.modifier):not(.hp):not(.initiative):not(.armorclass):not(.speed):not(.hitdice):not(.deathsaves):not(.header){
+      border-radius: 10px;
+      
+  }
+
+  .blue {
+    background: blue;
+  }
+  
+  .hide {
+    display: none !important;
+  }
+  .back{
+    width: auto;
+    padding-left: 6px;
+    padding-right: 6px;
+    border: none;
+    background: #f8f8e6;
+    text-decoration: none;
+    color: black;
+    border-radius: 25px;
+    transition: .7s ease;
+}
+.back:hover{
+    width: auto;
+    text-decoration: none;
+    color: black;
+    padding-left: 6px;
+    padding-right: 6px;
+    background: #f8f8e690;
+    border-radius: 25px;
+    box-shadow: 0 0 5px black inset;
+}
+
+
+  .logo{
+    position: fixed;
+    top:30%;
+    left:50%;
+    transform: translateX(-50%);
+    opacity:0.085;
+    z-index: -1000;
+    pointer-events: none;
+  }
+  
+  textarea {
+    font-size: 10px;
+    text-align: left;
+    width: calc(100% - 20px - 2px);
+    border-radius: 10px;
+    padding: 10px;
+    resize: none;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 15em;
+    white-space: pre-wrap;
+  }
+  
+  input[type=checkbox] {
+    cursor: pointer;
+    background: #f8f8e690;
+  }
+  
+  div.box {
+    margin-top: 10px;
+  }
+
+  form.charsheet {
+    width: 800px;
+    right: 0;
+    left: 0;
+    margin-top: 50px;
+  }
+  form.charsheet div.textblock {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    align-items: center;
+  }
+  form.charsheet div.textblock label {
+    text-align: center;
+    border: 1px solid black;
+    border-top: 0;
+    font-size: 10px;
+    width: calc(100% - 20px - 2px);
+    border-radius: 0 0 10px 10px;
+    padding: 4px 0;
+    font-weight: bold;
+  }
+  form.charsheet div.textblock textarea {
+    border: 1px solid black;
+  }
+  form.charsheet ul {
+    margin: 0;
+    padding: 0;
+  }
+  form.charsheet ul li {
+    list-style-image: none;
+    display: block;
+  }
+  form.charsheet ::-moz-placeholder {
+    color: black;
+  }
+  form.charsheet :-ms-input-placeholder {
+    color: black;
+  }
+  form.charsheet ::placeholder {
+    color: black;
+  }
+  form.charsheet label {
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+  form.charsheet header {
+    display: flex;
+    align-contents: stretch;
+    align-items: stretch;
+  }
+  form.charsheet header section.charname {
+    border: 1px solid black;
+    border-right: 0;
+    border-radius: 10px 0 0 10px;
+    padding: 5px 0;
+    width: 30%;
+    display: flex;
+    flex-direction: column-reverse;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+  }
+  form.charsheet header section.charname input {
+    padding: 0.5em;
+    margin: 5px;
+    border: 0;
+  }
+  form.charsheet header section.charname label {
+    padding-left: 1em;
+  }
+  form.charsheet header section.misc {
+    width: 70%;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  form.charsheet header section.misc ul {
+    padding: 10px 0px 5px 0px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  form.charsheet header section.misc ul li {
+    width: 33.33333%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  form.charsheet header section.misc ul li label {
+    margin-bottom: 5px;
+  }
+  form.charsheet header section.misc ul li input {
+    border: 1px solid black;
+    outline: none;
+  }
+  form.charsheet main {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  form.charsheet main div.label-container {
+    position: relative;
+    width: 100%;
+    height: 18px;
+    margin-top: 6px;
+    border: 1px solid black;
+    border-left: 0;
+    text-align: center;
+  }
+  form.charsheet main div.label-container > label {
+    position: absolute;
+    left: 0;
+    top: 1px;
+    transform: translate(0%, 50%);
+    width: 100%;
+    font-size: 8px;
+  }
+  form.charsheet main > section {
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+  }
+  form.charsheet main > section section.attributes {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  form.charsheet main > section section.attributes div.scores {
+    width: 101px;
+    border-radius: 10px;
+    padding-bottom: 5px;
+  }
+  form.charsheet main > section section.attributes div.scores label {
+    font-size: 8px;
+    font-weight: bold;
+  }
+  form.charsheet main > section section.attributes div.scores ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+  }
+  form.charsheet main > section section.attributes div.scores ul li {
+    height: 80px;
+    width: 70px;
+    background: #f8f8e690;
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+  form.charsheet main > section section.attributes div.scores ul li input {
+    width: 100%;
+    padding: 0;
+    border: 0;
+  }
+  form.charsheet main > section section.attributes div.scores ul li div.score input {
+    text-align: center;
+    font-size: 40px;
+    padding: 2px 0px 0px 0px;
+    background: #f8f8e690;
+  }
+  form.charsheet main > section section.attributes div.scores ul li div.modifier {
+    margin-top: 3px;
+  }
+  form.charsheet main > section section.attributes div.scores ul li div.modifier input {
+    background: #2f2f2f;
+    width: 30px;
+    height: 20px;
+    border: 1px inset black;
+    border-radius: 20px;
+    margin: -1px;
+    text-align: center;
+    color: #bbb;
+  }
+  form.charsheet main > section section.attributes div.attr-applications div.inspiration {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  form.charsheet main > section section.attributes div.attr-applications div.inspiration input {
+    
+    border: 1px solid black;
+    padding: 15px;
+    border-radius: 10px;
+    width: 36px;
+    height: 32px;
+    background: #f8f8e690;
+    border: 1px solid black;
+    accent-color:#2f2f2f;
+  }
+  form.charsheet main > section section.attributes div.attr-applications div.proficiencybonus {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  form.charsheet main > section section.attributes div.attr-applications div.proficiencybonus input {
+    width: 30px;
+    height: 28px;
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 10px;
+  }
+  form.charsheet main > section section.attributes div.attr-applications div.list-section {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 5px;
+  }
+  form.charsheet main > section section.attributes div.attr-applications div.list-section div.label {
+    margin-top: 10px;
+    margin-bottom: 2.5px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: bold;
+  }
+  form.charsheet main > section section.attributes div.attr-applications div.list-section ul li {
+    display: flex;
+    align-items: center;
+  }
+  form.charsheet main > section section.attributes div.attr-applications div.list-section ul li > * {
+    margin-left: 5px;
+  }
+  form.charsheet main > section section.attributes div.attr-applications div.list-section ul li label {
+    text-transform: none;
+    font-size: 8px;
+    text-align: left;
+    order: 3;
+  }
+  form.charsheet main > section section.attributes div.attr-applications div.list-section ul li label span.skill {
+    color: black;
+  }
+  form.charsheet main > section section.attributes div.attr-applications div.list-section ul li input[type=text] {
+    width: 30px;
+    font-size: 10px;
+    text-align: center;
+    border: 1px solid black;
+    margin-bottom: 2px;
+    order: 2;
+  }
+  form.charsheet main > section section.attributes div.attr-applications div.list-section ul li input[type=checkbox] {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    order: 1;
+  }
+  form.charsheet main > section section.attributes div.attr-applications div.list-section ul li input[type=checkbox]:checked {
+    background-color: black;
+  }
+  form.charsheet main > section div.passive-perception {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  form.charsheet main > section div.passive-perception input {
+    width: 30px;
+    height: 28px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+  form.charsheet main > section div.otherprofs textarea {
+    height: 26em;
+    background: #f8f8e690;
+  }
+  form.charsheet main section.combat {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+  }
+  form.charsheet main section.combat > div {
+    overflow: hidden;
+  }
+  form.charsheet main section.combat > div.armorclass, form.charsheet main section.combat > div.initiative, form.charsheet main section.combat > div.speed {
+    flex-basis: 33.333%;
+  }
+  form.charsheet main section.combat > div.armorclass > div, form.charsheet main section.combat > div.initiative > div, form.charsheet main section.combat > div.speed > div {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-top: 10px;
+  }
+  form.charsheet main section.combat > div.armorclass > div label, form.charsheet main section.combat > div.initiative > div label, form.charsheet main section.combat > div.speed > div label {
+    font-size: 8px;
+    width: 50px;
+    border: 1px solid black;
+    border-top: 0;
+    background: #f8f8e690;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 0 0 10px 10px;
+  }
+  form.charsheet main section.combat > div.armorclass > div input, form.charsheet main section.combat > div.initiative > div input, form.charsheet main section.combat > div.speed > div input {
+    height: 70px;
+    width: 70px;
+    border-radius: 10px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 30px;
+  }
+  form.charsheet main section.combat > div.hp {
+    flex-basis: 100%;
+    background: #f8f8e690;
+    border-radius: 12px;
+    margin-top: 7px;
+  }
+  form.charsheet main section.combat > div.hp > div.regular {
+    background: #f8f8e690;
+    border: 1px solid black;
+    margin: 10px;
+    margin-bottom: 5px;
+    border-radius: 10px 10px 0 0;
+  }
+  form.charsheet main section.combat > div.hp > div.regular > div.max {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+  form.charsheet main section.combat > div.hp > div.regular > div.max label {
+    font-size: 10px;
+    text-transform: none;
+  }
+  form.charsheet main section.combat > div.hp > div.regular > div.max input {
+    width: 40%;
+    border: 0;
+    margin-top: 3px;
+    border: 1px solid black;
+    font-size: 12px;
+    text-align: center;
+  }
+  form.charsheet main section.combat > div.hp > div.regular > div.current {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  form.charsheet main section.combat > div.hp > div.regular > div.current input {
+    border: 0;
+    width: 100%;
+    padding: 1em 0;
+    font-size: 20px;
+    text-align: center;
+  }
+  form.charsheet main section.combat > div.hp > div.regular > div.current label {
+    font-size: 10px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-weight: bold;
+  }
+  form.charsheet main section.combat > div.hp > div.temporary {
+    margin: 10px;
+    margin-top: 0;
+    border: 1px solid black;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    background: #f8f8e690;
+  }
+  form.charsheet main section.combat > div.hp > div.temporary input {
+    padding: 1em 0;
+    font-size: 20px;
+    border: 0;
+    text-align: center;
+  }
+  form.charsheet main section.combat > div.hp > div.temporary label {
+    font-size: 10px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-weight: bold;
+  }
+  form.charsheet main section.combat > div.hitdice, form.charsheet main section.combat > div.deathsaves {
+    flex: 1 50%;
+    height: 100px;
+  }
+  form.charsheet main section.combat > div.hitdice > div, form.charsheet main section.combat > div.deathsaves > div {
+    height: 80px;
+  }
+  form.charsheet main section.combat > div.hitdice > div {
+    background: #f8f8e690;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  form.charsheet main section.combat > div.hitdice > div > div.total {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+    padding: 5px 0;
+    outline: none;
+  }
+  form.charsheet main section.combat > div.hitdice > div > div.total label {
+    font-size: 10px;
+    margin: 0.25em;
+    text-transform: none;
+    outline: none;
+  }
+  form.charsheet main section.combat > div.hitdice > div > div.total input {
+    font-size: 12px;
+    flex-grow: 1;
+    border: 1px solid black;
+    width: 50%;
+    margin-right: 0.25em;
+    padding: 0 0.25em;
+    text-align: center;
+    outline: none;
+  }
+  form.charsheet main section.combat > div.hitdice > div > div.remaining {
+    flex: 1;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  form.charsheet main section.combat > div.hitdice > div > div.remaining label {
+    text-align: center;
+    padding: 2px;
+    font-size: 10px;
+  }
+  form.charsheet main section.combat > div.hitdice > div > div.remaining input {
+    text-align: center;
+    border: 0;
+    flex: 1;
+  }
+  form.charsheet main section.combat > div.deathsaves > div {
+    margin: 10px;
+    background: #f8f8e690;;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  form.charsheet main section.combat > div.deathsaves > div > div.label {
+    text-align: center;
+  }
+  form.charsheet main section.combat > div.deathsaves > div > div.label label {
+    font-size: 10px;
+  }
+  form.charsheet main section.combat > div.deathsaves > div > div.marks {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+  }
+  form.charsheet main section.combat > div.deathsaves > div > div.marks div.deathsuccesses, form.charsheet main section.combat > div.deathsaves > div > div.marks div.deathfails {
+    display: flex;
+    align-items: center;
+  }
+  form.charsheet main section.combat > div.deathsaves > div > div.marks div.deathsuccesses label, form.charsheet main section.combat > div.deathsaves > div > div.marks div.deathfails label {
+    font-size: 8px;
+    text-align: center;
+    flex: 1 50%;
+  }
+  form.charsheet main section.combat > div.deathsaves > div div.bubbles {
+    flex: 1 40%;
+  }
+
+  div.bubbles{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+  }
+  form.charsheet main section.combat > div.deathsaves > div div.bubbles input[type=checkbox] {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+  form.charsheet main section.combat > div.deathsaves > div div.bubbles input[type=checkbox]:checked {
+    background-color: black;
+  }
+  form.charsheet main section.attacksandspellcasting {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  form.charsheet main section.attacksandspellcasting > div {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  form.charsheet main section.attacksandspellcasting > div > label {
+    order: 3;
+    text-align: center;
+  }
+  form.charsheet main section.attacksandspellcasting > div > table {
+    width: 100%;
+  }
+  form.charsheet main section.attacksandspellcasting > div > table th {
+    font-size: 10px;
+    color: black;
+  }
+  form.charsheet main section.attacksandspellcasting > div > table input {
+    width: calc(100% - 4px);
+    border: 1px solid black;
+    font-size: 10px;
+    padding: 3px;
+  }
+  form.charsheet main section.attacksandspellcasting > div textarea {
+    border: 0;
+    width: 100%;
+    background: #f8f8e690;
+    border: 1px solid black;
+    outline: none;
+  }
+  form.charsheet main section.equipment {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 10px;
+    height: 30%;
+  }
+  form.charsheet main section.equipment > div {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  form.charsheet main section.equipment > div > div.money ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  form.charsheet main section.equipment > div > div.money ul > li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+  }
+  form.charsheet main section.equipment > div > div.money ul > li label {
+    border: 1px solid black;
+    border-radius: 10px 0 0 10px;
+    border-right: 0;
+    width: 20px;
+    font-size: 8px;
+    text-align: center;
+    padding: 3px 0;
+  }
+  form.charsheet main section.equipment > div > div.money ul > li input {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 40px;
+    padding: 10px 3px;
+    font-size: 12px;
+    text-align: center;
+  }
+  form.charsheet main section.equipment > div > label {
+    order: 3;
+    text-align: center;
+    flex: 100%;
+  }
+  form.charsheet main section.equipment > div > textarea {
+    flex: 1;
+    border: 1px solid black;
+    outline: none;
+    background: #f8f8e690;
+    margin-left: 3px;
+    height: 90%;
+  }
+  form.charsheet main section.flavor {
+    padding: 10px;
+    border-radius: 10px;
+    height: 30%;
+  }
+  form.charsheet main section.flavor div {
+    background: #f8f8e690;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 5px;
+    border: 1px solid black;
+  }
+  form.charsheet main section.flavor div label {
+    text-align: center;
+    font-size: 10px;
+    margin-top: 1px;
+  }
+  form.charsheet main section.flavor div textarea {
+    border: 0;
+    outline: none;
+    background: #f8f8e690;
+    border-radius: 0;
+    height: 4em;
+    width: 100%;
+    border-radius: 12px;
+  }
+  form.charsheet main section.flavor div:first-child {
+    border-radius: 10px 10px 0 0;
+  }
+  form.charsheet main section.flavor div:not(:first-child) {
+    margin-top: 10px;
+  }
+  form.charsheet main section.flavor div:last-child {
+    border-radius: 0 0 10px 10px;
+  }
+  form.charsheet main section.features {
+    padding: 10px;
+    height: 70%;
+  }
+  form.charsheet main section.features div {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    background: transparent;
+    flex-direction: column-reverse;
+    height: 100%;
+  }
+  form.charsheet main section.features div label {
+    text-align: center;
+  }
+  form.charsheet main section.features div textarea {
+    border: 1px solid black;
+    padding: 5px;
+    margin-bottom: 5px;
+    height: 43em;
+    width: 100%;
+    background: #f8f8e690;
+    height: 100%;
+
+  }
+
+
+  .infoMessages{
+    position: fixed;
+    top: 90px;
+    right: 30px;
+    background: #2f2f2f90;;
+    border-radius: 12px;
+    box-shadow: -1px 3px 15px black;
+    padding: 10px 20px;
+    opacity:0;
+    transition: opacity 1s;
+    color: black;
+  }
+
+  .infoMessagesActive{
+    position: fixed;
+    top: 90px;
+    right: 30px;
+    background: #2f2f2f90;;
+    border-radius: 12px;
+    box-shadow: -1px 3px 15px black;
+    padding: 10px 20px;
+    opacity:1;
+    transition: opacity 1s;
+    color: black;
+  }
+
+
+
+  .charsheet_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    gap:0px;
+    margin-top: 30px;
+  }
+
+  .saveBtnWrapper{
+    position: static;
+    top: 80px;
+    left:50%;
+    right: calc((100% - 800px)/2 - 130px);
+    background: rgba(160,160,160,1);
+    border-radius: 0;
+    border-radius: 12px;
+    margin-bottom:30px;    
+    margin-top: 30px;
+
+
+    .saveBytn{
+      border: 1px solid black;
+      color: black;
+      border-radius: 15px;
+      background: #f8f8e690;
+      padding: 10px;
+      width: 100px;
+      outline: none;
+      transition: .8s all;
+  
+  
+    }
+  
+    .saveBytn:hover{
+      border-radius: 15px;
+      background: #2f2f2f;
+      cursor: pointer;
+      color:white;
+    }
+
+    .saveBytn:disabled{
+      color: transparent;
+      border: none;
+      background: #f8f8e6;
+      cursor:default;
+      border-radius: 0;
+    }
+  }
+
+  .exhaustionWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .exhaustion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 800px;
+    height: auto;
+    padding: 10px 20px;
+    background: linear-gradient(to bottom right, rgba(160, 160, 160, 0.3), rgba(160, 160, 160, 0.5));
+    box-shadow: 0px 0px 3px #2f2f2f90;
+  }
+
+  .exhaustion_item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    .exhaustion_item__checkbox{
+      background: #f8f8e690;
+      border: 1px solid black;
+      accent-color: #2f2f2f;
+    }
+
+    .exhaustion_item__label{
+      user-select: none;
+      cursor:pointer;
+    }
+  }
+
+
+  
+
+@media (max-width: 750px) {
+  .exhaustion{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 330px;
+      gap: 15px;
+  }
+
+  .charsheet_wrapper{
+    width: 330px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  form.charsheet{
+    width: 330px;
+  }
+
+  form.charsheet main > section{
+    width: 100%;
+  }
+
+  main{
+    width: 95%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  form.charsheet header section.misc{
+    border: none;
+    width: 100%;
+
+    ul{
+      width: 100%;
+
+      li{
+        width: 100%;
+        margin-bottom: 10px;
+        gap: 3px;
+        text-align: left;
+
+        input{
+          text-align: center;
+        }
+
+        label{
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  form.charsheet header section.charname{
+    border: none;
+    width: 100%;
+
+    input{
+      text-align: center;
+      border: 1px solid black;
+    }
+    label{
+      font-size: 10px;
+    }
+  }
+
+
+  textarea[name='features'], textarea[name='Equipment']{
+    max-height: 500px;
+    min-height: 300px;
+  }
+
+  textarea[name='ATTACKS&SPELLCASTING'], textarea[name='otherprofs']{
+    max-height: 500px;
+    min-height: 300px;
+  }
+  
+  
+}

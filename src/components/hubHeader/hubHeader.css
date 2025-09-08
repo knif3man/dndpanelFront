@@ -1,0 +1,218 @@
+
+
+.hubHeader{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(160,160,160);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    z-index: 90;
+    border-radius: 0px;
+
+    .username{
+        position: absolute;
+        left: 15px;
+        color: rgba(0,0,0,0.7);
+        font-size: 20px;
+        cursor: pointer;
+        user-select: none;
+
+        span{
+            text-decoration: underline;
+        }
+    }
+
+    .logout{
+        position: absolute;
+        right: 15px;
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 10px 20px;
+        color: black;
+        border-radius: 15px;
+        transition: .4s all;
+        box-shadow: inset 3px 3px 3px #00000070;
+        background: #FCFCF190;
+        backdrop-filter: blur(19px) saturate(180%);
+    }
+
+    .logout:hover{
+        background: #2f2f2f;
+        color: white;
+    }
+
+    .toMain{
+        /* outline: none;
+        cursor: pointer;
+        background: transparent;
+        border: 1px solid black;
+        padding: 5px 10px;
+        color: black;
+        border-radius: 15px;
+        transition: .4s all; */
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 10px 20px;
+        color: black;
+        border-radius: 15px;
+        transition: .4s all;
+        box-shadow: inset 3px 3px 3px #00000070;
+        background: #FCFCF190;
+        backdrop-filter: blur(19px) saturate(180%);
+    }
+
+    .toMain:hover{
+        background: #2f2f2f;
+        color: white;
+    }
+
+    .addCharBtn{
+        display: flex;
+        align-items: center;
+    }
+
+    .adduser{
+        background: transparent;
+        border:none;
+        text-decoration: underline;
+        font-family: 'Times New Roman', Times, serif;
+        cursor: pointer;
+        color: black;
+        color: rgba(0,0,0,0.7);
+        height: 20px;
+    }
+}
+
+#encounter{
+    transition: .9s;
+    position: relative;
+    width: 65%;
+    height: 60px;
+}
+
+.systemBtn{
+    /* background: transparent;
+    border: 1px solid black;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    width: 149px;
+    color: black;
+    border-radius: 15px;
+    transition: .4s all;   
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(50%); */
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    color: black;
+    border-radius: 15px;
+    transition: .4s all;
+    box-shadow: inset 3px 3px 3px #00000070;
+    background: #FCFCF190;
+    backdrop-filter: blur(19px) saturate(180%);
+
+}
+
+.systemBtn:hover{
+    background: #2f2f2f;
+    /* border: 1px solid #2f2f2f; */
+    color: white;
+}
+
+.encounterDiv{
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    position: relative;
+
+    p{
+        padding: 3px 5px;
+        background-color: #f8f8e6;
+        border-radius: 4px;
+        color: #2f2f2f;
+        min-width: 100px;
+        text-align: center;
+        user-select:none;
+    }
+}
+
+.counter{
+    font-size: 48px;
+    color: green;
+    position: absolute;
+    left: 0;
+    top: 65%;
+    transition: .4s;
+}
+
+
+@media screen and (max-width:720px) {
+    .adduser{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .userDataWrapper{
+        display: none;
+    }
+    .adduser{
+        display: none;
+    }
+}
+
+
+
+
+/* .moved{
+    animation: midToRight;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    width: 174px;
+}
+
+.unmoved{
+    animation: rightToMid;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    width: 149px; 
+}
+/* 
+@keyframes rightToMid {
+    from{
+        right: 5px;
+        transform: translateY(-50%);
+    }
+    to{
+        right:50%;
+        transform: translateY(-50%) translateX(50%);
+    }
+}
+
+@keyframes midToRight {
+    from{
+        right:50%;
+        transform: translateY(-50%) translateX(50%);
+    }
+    to{
+        right: 5px;
+        transform: translateY(-50%);
+    }
+} */
