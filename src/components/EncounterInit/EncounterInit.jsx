@@ -138,7 +138,7 @@ const EncounterInit = (props) => {
             body: JSON.stringify({data:obj})
           }
       
-        const resp = await fetch(backend+'/api/encounterInit',options)
+        const resp = await fetch(backend+'/encounterInit',options)
         try{
             const answer = await resp.json()
         } catch(e){

@@ -39,7 +39,7 @@ export default function CharCard( props ){
     useEffect(()=>{
         hp.current.style.width = Math.round(200 /100 * (chp/(mhp/100))) + 'px'
         exp.current.style.width = Math.round(200 /100 * (cexp/(mexp/100))) + 'px'
-    },[chp,exp])
+    },[chp,cexp])
 
     function openCharsheet(charname){
         props.setCharname(charname)

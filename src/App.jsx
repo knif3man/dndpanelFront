@@ -47,7 +47,7 @@ const App = () => {
 
 
   // обработка сообщения от сервера о необходимости обновить данные
-  const socket = socketIO.connect('https://dndpanel.ru');
+  const socket = socketIO.connect(backend.replace('/api',''));
   useEffect(()=>{
     // let string = window.navigator.userAgent.toLowerCase().replace(/ /g,'').replace(/;/g,',') + ';' + Intl.DateTimeFormat().resolvedOptions().locale + ';' + Intl.DateTimeFormat().resolvedOptions().timeZone
     // tryLogin(string)
@@ -108,7 +108,7 @@ const App = () => {
       method: 'GET',
     }
 
-    const resp = await fetch(backend+'/api/checkEncounter',options)
+    const resp = await fetch(backend+'/checkEncounter',options)
     const answer = await resp.json()
     if(answer.data != 'no'){
       setHideStartEncounter(true)
@@ -130,7 +130,7 @@ const App = () => {
       method: 'GET',
     }
 
-    const resp = await fetch(backend+'/api/getEncounterCounterPosition',options)
+    const resp = await fetch(backend+'/getEncounterCounterPosition',options)
     try{
       const newPosition = await resp.json()
       return newPosition
@@ -148,7 +148,7 @@ const App = () => {
       body: JSON.stringify({user:user})
     }
 
-    const resp = await fetch(backend+'/api/getCharStatusEffects',options)
+    const resp = await fetch(backend+'/getCharStatusEffects',options)
     try{
       const charsStatus = await resp.json()
       return charsStatus
@@ -166,7 +166,7 @@ const App = () => {
       body: JSON.stringify({data:hashString(hash)})
     }
 
-    const resp = await fetch(backend+'/api/tryLogin',options)
+    const resp = await fetch(backend+'/tryLogin',options)
     try{
       const charsStatus = await resp
       return {
@@ -195,7 +195,7 @@ const App = () => {
       body: JSON.stringify({user:user})
     }
 
-    const resp = await fetch(backend+'/api/getChar',options)
+    const resp = await fetch(backend+'/getChar',options)
     const charList = await resp.json()
     return charList
   }
@@ -205,7 +205,7 @@ const App = () => {
       method: 'GET'
     }
 
-    const res = await fetch(backend + '/api/getEncounterData', options)
+    const res = await fetch(backend + '/getEncounterData', options)
     const encounterUser = await res.json()
     return encounterUser
   }
@@ -215,7 +215,7 @@ const App = () => {
       method: 'GET'
     }
 
-    const res = await fetch(backend + '/api/getHidedCharacters', options)
+    const res = await fetch(backend + '/getHidedCharacters', options)
     const hidedChars = await res.json()
     setHidedCharacters(hidedChars)
   }

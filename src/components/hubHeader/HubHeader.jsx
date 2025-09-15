@@ -15,12 +15,15 @@ const HubHeader = (props) => {
 
     useEffect(()=>{
         if(encounterDiv.current){
-            console.log(encounterDiv.current)
-            if(props.encounterCounterPosition > encounterDiv.current.children.length){
+            // console.log(encounterDiv.current)
+            // console.log(encounterDiv.current.children.length - 1)
+            // console.log(props.encounterCounterPosition)
+            if(props.encounterCounterPosition > encounterDiv.current.children.length - 1){
                 props.setEncounterCounterPosition(0)
+            } else {
+                let center = encounterDiv.current.children[props.encounterCounterPosition].offsetLeft + encounterDiv.current.children[props.encounterCounterPosition].offsetWidth / 2 - 15;
+                encounterCounter.current.style.left = (center).toString() + 'px'
             }
-            let center = encounterDiv.current.children[props.encounterCounterPosition].offsetLeft + encounterDiv.current.children[props.encounterCounterPosition].offsetWidth / 2 - 15;
-            encounterCounter.current.style.left = (center).toString() + 'px'
         }
     },[props.encounterCounterPosition])
 
@@ -75,7 +78,7 @@ const HubHeader = (props) => {
             body: JSON.stringify({newPosition:newPosition})
         }
       
-        const resp = await fetch(backend+'/api/setEncounterPosition',options)
+        const resp = await fetch(backend+'/setEncounterPosition',options)
         props.setEncounterCounterPosition(newPosition)
 
     }
@@ -87,7 +90,7 @@ const HubHeader = (props) => {
             method: 'GET'
         }
       
-        const res = await fetch(backend + '/api/stopEncounter', options)
+        const res = await fetch(backend + '/stopEncounter', options)
         return
     }
     

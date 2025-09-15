@@ -48,7 +48,7 @@ const CharacterCards = (props) =>{
         if(hideSelect.current.children.length == 1){
             showHidedCharacters()
         }
-        const res = await fetch(backend + '/api/setCharVisibility', options)
+        const res = await fetch(backend + '/setCharVisibility', options)
     }
 
 

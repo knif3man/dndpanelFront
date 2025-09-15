@@ -93,7 +93,7 @@ const CreateCharacter = (props) => {
                 body: JSON.stringify(CharData)
             }
           
-            const resp = await fetch(backend+'/api/createCharacter',options)
+            const resp = await fetch(backend+'/createCharacter',options)
                 .then(response =>{
                     return response.text()
                 }) 

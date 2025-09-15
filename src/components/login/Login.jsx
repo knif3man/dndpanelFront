@@ -4,8 +4,6 @@ import "./login.css";
 import backend from '../../urls'
 
 const Login = (props) => {
-
-
     const loginButton = useRef(null)
 
     function HandleloginBtn(e){
@@ -43,7 +41,7 @@ const Login = (props) => {
 
     const handleLogInButton = async (e) =>{
 
-        const res = await fetch(backend+'/api/login',{
+        const res = await fetch(backend+'/login',{
             method: 'POST',
             headers: {
               'Content-Type': 'application/json;charset=utf-8'

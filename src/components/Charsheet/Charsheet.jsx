@@ -21,7 +21,7 @@ export default function Charsheet( props ){
         body: JSON.stringify({user:user})
       }
   
-      const resp = await fetch(backend+'/api/getChar',options)
+      const resp = await fetch(backend+'/getChar',options)
       const dataFromServerWithChars = await resp.json()
       console.log(dataFromServerWithChars)
       props.setChars(dataFromServerWithChars)
@@ -30,7 +30,7 @@ export default function Charsheet( props ){
     useEffect(()=>{
       async function getCharsheet(charname){
         
-        const resp = await fetch(backend+'/api/getCharsheet',{
+        const resp = await fetch(backend+'/getCharsheet',{
           method: 'POST',
           headers: {
             'Content-Type': 'application/json;charset=utf-8'
@@ -117,7 +117,7 @@ export default function Charsheet( props ){
             },
             body: JSON.stringify(dataToSave)
           }
-          const res = await fetch(backend+'/api/saveCharData',options)
+          const res = await fetch(backend+'/saveCharData',options)
           const data = await res.json()
           notify.current.innerText = data.status.toString()
           notify.current.className = 'infoMessagesActive'

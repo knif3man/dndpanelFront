@@ -19,7 +19,7 @@ export default function AdminPanel( props ){
         }
       
         try{
-            const resp = await fetch(backend+'/api/getAvailableStatus',options)
+            const resp = await fetch(backend+'/getAvailableStatus',options)
             const ServerStatusEffectsList = await resp.json()
             let tempObj = []
             for(let item of ServerStatusEffectsList){
@@ -103,7 +103,7 @@ export default function AdminPanel( props ){
           body: JSON.stringify({user:user})
         }
     
-        const resp = await fetch(backend+'/api/getChar',options)
+        const resp = await fetch(backend+'/getChar',options)
         const charList = await resp.json()
         props.setChars(charList)
       }
@@ -132,26 +132,24 @@ export default function AdminPanel( props ){
             for(let person of Object.values(props.chars)){
                 if(person.char_name == char && props.selectedCards[char]){
                     const expChangeValue = parseInt(Object.fromEntries(formData).EXP)
-                    if(person.EXP + expChangeValue >= person.xp_value){
-                        const addLvlReq = await fetch(backend + '/api/addLvl',{
-                            method:'POST',
-                            headers:{
-                                'Content-Type': 'application/json;charset=utf-8'
-                            },
+                    const addLvlReq = await fetch(backend + '/addLvl',{
+                        method:'POST',
+                        headers:{
+                            'Content-Type': 'application/json;charset=utf-8'
+                        },
                             body: JSON.stringify({
                                 char_name: char,
+                                currentEXP: person.EXP,
+                                potentialEXP: person.EXP + expChangeValue,
                                 lvl:person.LVL
                             })
-                        })
-
-                        const addLvlResponse = await addLvlReq.text()
-                    }
-                    
+                    })
+                    await addLvlReq.text()
                 }
             }
         }
 
-        const res = await fetch(backend+'/api/changeCharacters',{
+        const res = await fetch(backend+'/changeCharacters',{
             method: 'POST',
             headers: {
               'Content-Type': 'application/json;charset=utf-8'
@@ -184,7 +182,7 @@ export default function AdminPanel( props ){
         }
         props.setSelectedCards(newSelectedCards)
 
-        const response = await fetch(backend + '/api/hideCharacters',{
+        const response = await fetch(backend + '/hideCharacters',{
             method:'POST',
             headers:{
                 'Content-type':'application/json;charset=utf-8'
@@ -203,7 +201,7 @@ export default function AdminPanel( props ){
     return(
         <section className={props.isAdminPanelOpen?"AdminPanel open":"AdminPanel"} onClick={handleAdminPanel}>
             <section className="hideCharacters">
-                <span className='sysBtn left' onClick={handleHideCharacters}><img src="../../../public/hide.png" width={30} height={30}></img></span>
+                <span className='sysBtn left' onClick={handleHideCharacters}><img src="../../../hide.png" width={30} height={30}></img></span>
             </section>
             <section className="ufertyros" onClick={handleAdminPanelClose}>
                 <img width={20} src={props.isAdminPanelOpen?"arrowDown.png":"arrowUp.png"}/>
