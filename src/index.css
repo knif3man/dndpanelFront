@@ -10,9 +10,9 @@ html{
 }
 
 body{
-  /* background: #f8f8e6; */
+  background: #f8f8e6;
   /* background: #dddd0d; */
-  background: lightslategrey;
+/*   background: lightslategrey; */
   height: 100%;
   width: 100%;
   overflow-y:auto;
