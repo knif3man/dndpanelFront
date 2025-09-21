@@ -195,13 +195,13 @@ form label{
     display: block;
   }
   form.charsheet ::-moz-placeholder {
-    color: black;
+    color: gray;
   }
   form.charsheet :-ms-input-placeholder {
-    color: black;
+    color: gray;
   }
   form.charsheet ::placeholder {
-    color: black;
+    color: gray;
   }
   form.charsheet label {
     text-transform: uppercase;

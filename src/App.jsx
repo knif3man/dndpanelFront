@@ -6,6 +6,7 @@ import AdminPanel from "./components/AdminPanel/AdminPanel"
 import Charsheet from "./components/Charsheet/Charsheet"
 import EncounterInit from "./components/EncounterInit/EncounterInit"
 import CreateCharacter from "./components/CreateCharacter/CreateCharacter"
+import Cemetry from "./components/Cemetry/cemetry"
 import { useEffect, useState, useRef } from 'react'
 import backend from './urls'
 import socketIO from 'socket.io-client';
@@ -23,6 +24,8 @@ const App = () => {
   const [ user, setUser ] = useState(null)
   const [ gm, setGM ] = useState(false)
   const [charname, setCharname ] = useState(null)
+
+  const [ isCemetry,setIsCemetry ] = useState(false)
 
   const [showChars, setShowChars] = useState(true)
   const [chars,setChars ] = useState(null)
@@ -257,8 +260,11 @@ const App = () => {
       <Logo/>
       {
         isUser ? (
-          <>
-            <HubHeader user={user} setChars={setChars} logout={setisUser} setShowChars={setShowChars} isCharsheet={isCharsheet} setisCharsheet={setisCharsheet} setCharname={setCharname} gm={gm} setEncounterInit={setEncounterInit} isEncounter={isEncounter} setIsEncounter={setIsEncounter} encounterChars={encounterChars} isEncounetrCounterNeedUpdate={isEncounetrCounterNeedUpdate} encounterCounterPosition={encounterCounterPosition} setEncounterCounterPosition={setEncounterCounterPosition} hideStartEncounter={hideStartEncounter} setHideStartEncounter={setHideStartEncounter} isCreateCharacter={isCreateCharacter} setIsCreateCharacter={setIsCreateCharacter}/>
+          isCemetry ? (<>
+          <Cemetry setIsCemetry={setIsCemetry}></Cemetry>
+          </>):(
+            <>
+            <HubHeader user={user} setIsCemetry={setIsCemetry} setChars={setChars} logout={setisUser} setShowChars={setShowChars} isCharsheet={isCharsheet} setisCharsheet={setisCharsheet} setCharname={setCharname} gm={gm} setEncounterInit={setEncounterInit} isEncounter={isEncounter} setIsEncounter={setIsEncounter} encounterChars={encounterChars} isEncounetrCounterNeedUpdate={isEncounetrCounterNeedUpdate} encounterCounterPosition={encounterCounterPosition} setEncounterCounterPosition={setEncounterCounterPosition} hideStartEncounter={hideStartEncounter} setHideStartEncounter={setHideStartEncounter} isCreateCharacter={isCreateCharacter} setIsCreateCharacter={setIsCreateCharacter}/>
             {showChars?(
               <>
                 {gm?<AdminPanel user={user} chars={chars} isAdminPanelOpen={isAdminPanelOpen} setisAdminPanelOpen={setisAdminPanelOpen} selectedCards={selectedCards} setSelectedCards={setSelectedCards} setChars={setChars} charsStatusEffects={charsStatusEffects}/>:null}
@@ -271,6 +277,8 @@ const App = () => {
             {encounterInit[0]?<EncounterInit chars={chars} setEncounterInit={setEncounterInit} encounterInit={encounterInit} setHideStartEncounter={setHideStartEncounter}/>:null}
             {isCreateCharacter?<><CreateCharacter setIsCreateCharacter={setIsCreateCharacter} user={user}/></>:null}
           </>
+        )
+          
         ) : (
           <Login setisUser={setisUser} setUser={setUser} getChar={getChar} setChars={setChars} setGM={setGM} chars={chars} setSelectedCards={setSelectedCards} getCharStatusEffects={getCharStatusEffects} setCharStatusEffects={setCharStatusEffects}/>
         )

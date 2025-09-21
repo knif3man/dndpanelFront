@@ -94,6 +94,9 @@ const HubHeader = (props) => {
         return
     }
     
+    function cemetry(){
+        props.setIsCemetry(true)
+    }
 
     return (
         <section className="hubHeader">
@@ -109,6 +112,7 @@ const HubHeader = (props) => {
             {props.isEncounter?<><div ref={encounterDiv} className='encounterDiv'><span className='counter' ref={encounterCounter}>&#8679;</span></div>{props.gm?<><button className='endBtn' onClick={handleTurn}>Ход</button><button className='endBtn' onClick={stopEncounter}>Завершить</button></>:null}</>:null}
             {props.gm && !props.hideStartEncounter?<button className="systemBtn" onClick={handleEncounterBtn}>Начать encounter</button>:null}
             {props.isCharsheet?<button className="toMain" onClick={handleToMain}>На главную</button>:null}
+            <button className='cemetryBtn' onClick={cemetry}>Кладбище</button>
             <button className="logout" onClick={logout}>Выйти</button>
         </section>
     )
