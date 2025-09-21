@@ -8,7 +8,7 @@ body,html {
     font-family: 'Poppins' sans-serif;
 }
 
-.wrapper{
+.cemetryWrapper{
     position: relative;
     height: 100%;
     width: 100%;
@@ -23,7 +23,7 @@ body,html {
     
 }
 
-.wrapper img{
+.cemetryWrapper img{
     position: absolute;
     top: 0;
     left: 0;
@@ -34,11 +34,11 @@ body,html {
 }
 
 
-.wrapper img#gate-left{
+.cemetryWrapper img#gate-left{
     transform: translateX(-17%);
 }
 
-.wrapper img#gate-right{
+.cemetryWrapper img#gate-right{
     transform: translateX(19%);
 }
 
@@ -52,7 +52,7 @@ body,html {
     transform: translateX(-50%) translateY(-50%);
 }
 
-.content{
+.cemetryContent{
     position: relative;
     background: #020912;
     color: #fff;

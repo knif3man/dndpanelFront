@@ -23,7 +23,7 @@ const Cemetry = (props) =>{
     }
 
     function drawDeceasedCharacters(list){
-        let contentDiv = document.querySelector('.content')
+        let contentDiv = document.querySelector('.cemetryContent')
         contentDiv.innerHTML = ''
         for (let char of list){
             let charData = char
@@ -32,7 +32,7 @@ const Cemetry = (props) =>{
 
             let charNameSpan = document.createElement('span')
             charNameSpan.className = 'charName'
-            charNameSpan.innerText = 'Имя: ' + charData['char_name']
+            charNameSpan.innerText = 'Имя: ' + charData['char_name'].replace('RIP','')
             console.log(charNameSpan)
 
             let lvlSpan = document.createElement('span')
@@ -86,7 +86,7 @@ const Cemetry = (props) =>{
 
     return (
         <>
-            <div className="wrapper">
+            <div className="cemetryWrapper">
                 <span className="text">Скроль вниз</span>
                 <div className="fog"><div></div></div>
                 <img src={tree_left} id="tree-left"/>
@@ -95,7 +95,7 @@ const Cemetry = (props) =>{
                 <img src={gate_left} className="gateL" id="gate-left"/>
                 <img src={gate_right} className="gateR" id="gate-right"/>
             </div>
-            <div className="content">
+            <div className="cemetryContent">
             </div>
             <button className='cemetryBackBtn' onClick={closeCemetry}>Назад</button>
 
